@@ -8,7 +8,11 @@ implement the Destroyer interface, which contain the business logic for terminat
 
 ## Installation  
 ```bash 
-go install github.com/barbosaigor/kubernetescs
+go get -u github.com/barbosaigor/kubernetescs  
+cd $GOPATH/src/github.com/barbosaigor/kubernetescs/cmd  
+go install kubernetescs.go  
+# Or  
+go build -o $YOURPATH/kubernetescs kubernetescs.go  
 ```  
 
 Kubernetescs hosts API    
