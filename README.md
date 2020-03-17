@@ -15,6 +15,8 @@ go install kubernetescs.go
 go build -o $YOURPATH/kubernetescs kubernetescs.go  
 ```  
 
+Kubernetes proxy must be online, the Chaos Server requests the Kubernetes localhost to terminate instances.  
+
 Kubernetescs hosts API    
 -u username for chaos server auth  
 -s password for chaos server auth  
