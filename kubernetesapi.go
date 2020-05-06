@@ -2,15 +2,10 @@ package kubernetescs
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"io/ioutil"
 	"net/http"
 )
-
-var ErrAPI = errors.New("Internal API server error")
-var ErrEmptyService = errors.New("Empty Service")
-var ErrInternalKube = errors.New("Internal Kubernetes error")
 
 // kubeGetResp is a response body of Kubernetes get pods API
 type kubeGetResp struct {

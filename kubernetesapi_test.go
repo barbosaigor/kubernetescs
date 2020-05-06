@@ -5,6 +5,9 @@ import (
 	"testing"
 )
 
+const host = "127.0.0.1:8001"
+const namespace = "default"
+
 func TestShutdown(t *testing.T) {
 	podName := "sapi-pods" // Pod name for shutdown instance
 	if err := Shutdown(host, namespace, podName); err != nil && err != ErrInternalKube {
