@@ -25,8 +25,11 @@ func New(conf, namespace string) *ChaosServerKubernetes {
 }
 
 // Shutdown turns off a pod
-func (k ChaosServerKubernetes) Shutdown(svc string) error {
-	return nil
+func (k ChaosServerKubernetes) Shutdown(pod string) error {
+	deletePolicy := metav1.DeletePropagationForeground
+	return k.client.AppsV1().ReplicaSets(k.Namespace).Delete(context.TODO(), pod, metav1.DeleteOptions{
+		PropagationPolicy: &deletePolicy,
+	})
 }
 
 // ListInstances lists all instances with corresponding status
