@@ -9,7 +9,7 @@ implement the Destroyer interface, where the business logic to terminate instanc
 
 ## Installation  
 ```bash 
-go get github.com/barbosaigor/kubernetescs/cmd/...
+go get -u github.com/barbosaigor/kubernetescs/...
 ```   
 
 Kubernetescs hosts API    
