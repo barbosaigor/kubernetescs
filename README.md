@@ -1,28 +1,22 @@
 # Kubernetes Chaos Server  
-An chaos server implementation that terminates Kubernetes pods via an API.
+A Chaos Server implementation that terminates Kubernetes pods, used by [April](https://github.com/barbosaigor/april) tool.
 
 ## What is a Chaos Server ?
-Chaos server hosts an API that terminantes instances. It is used in [April](https://github.com/barbosaigor/april) CLI, which run its algorithm and asks the Chaos server to finish 
-the selected instances. The API implementation lives in april/destroyer package, so chaos servers must include that package and
-implement the Destroyer interface, which contain the business logic for terminate instances.  
+Chaos server hosts an API which terminates instances. It is used by [April](https://github.com/barbosaigor/april) CLI, that runs its algorithm and asks the Chaos Server to finish 
+any selected instances. All Chaos Servers implementations must implement the interface defined in april/destroyer package, so CSs must include that package and
+implement the Destroyer interface, where the business logic to terminate instances should be defined.  
 
 ## Installation  
 ```bash 
-go get -u github.com/barbosaigor/kubernetescs  
-cd $GOPATH/src/github.com/barbosaigor/kubernetescs/cmd  
-go install kubernetescs.go  
-# Or  
-go build -o $YOURPATH/kubernetescs kubernetescs.go  
-```  
-
-Kubernetes proxy must be online, the Chaos Server requests the Kubernetes localhost to terminate instances.  
+go get github.com/barbosaigor/kubernetescs/cmd/...
+```   
 
 Kubernetescs hosts API    
 -u username for chaos server auth  
 -s password for chaos server auth  
 -p port number (Default is 7071)  
 -n Kubernetes namespace  
---host especify Kubernetes host API  
+-e especify Kubernetes endpoint API  (Default is 127.0.0.1:8001)
 ```bash 
-kubernetescs -u bob -s mysecret -n dev
+kubernetescs -u bob -s mysecret
 ```  
