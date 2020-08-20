@@ -12,12 +12,12 @@ implement the Destroyer interface, where the business logic to terminate instanc
 go get -u github.com/barbosaigor/kubernetescs/...
 ```   
 
-Kubernetescs hosts API    
+Kubernetescs hosts a HTTP API    
 -u username for chaos server auth  
 -s password for chaos server auth  
 -p port number (Default is 7071)  
 -n Kubernetes namespace  
--e especify Kubernetes endpoint API  (Default is 127.0.0.1:8001)
+-e especify Kubernetes endpoint API (Default is 127.0.0.1:8001)
 ```bash 
 kubernetescs -u bob -s mysecret
 ```  
